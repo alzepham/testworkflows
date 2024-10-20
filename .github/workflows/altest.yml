@@ -1,1 +1,31 @@
+name: Dispatch Workflow with Options
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Enter your name'
+        required: true
+        default: 'John Doe'
+      environment:
+        description: 'Choose the environment'
+        required: true
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+          - testing
+          - QA
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run PowerShell script
+        run: |
+          pwsh -File ./script.ps1 -Name '${{ github.event.inputs.name }}' -Environment '${{ github.event.inputs.environment }}'
 
