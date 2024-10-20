@@ -1,4 +1,4 @@
-name: Dispatch Workflow with Options
+name: Complex Dispatch Workflow
 
 on:
   workflow_dispatch:
@@ -25,7 +25,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run PowerShell script
+      - name: Run Enhanced PowerShell Script
         run: |
-          pwsh -File ./script.ps1 -Name '${{ github.event.inputs.name }}' -Environment '${{ github.event.inputs.environment }}'
-
+          pwsh -File ./enhanced_script.ps1 -Name '${{ github.event.inputs.name }}' -Environment '${{ github.event.inputs.environment }}'
