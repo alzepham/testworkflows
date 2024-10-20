@@ -18,6 +18,7 @@ function Handle-Environment {
         "production"  { Write-Output "You are in the production environment. All changes are live!" }
         "testing"     { Write-Output "You are in the testing environment. Validate all scenarios." }
         "QA"          { Write-Output "You are in the QA environment. Ensure quality assurance." }
+        "UAT"          { Write-Output "You are in the UAT environment. Ensure quality assurance." }
         default       { Write-Output "Unknown environment: $Env" }
     }
 }
