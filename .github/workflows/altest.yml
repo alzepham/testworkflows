@@ -6,7 +6,7 @@ on:
       name:
         description: 'Enter your name'
         required: true
-        default: 'John Doe'
+        default: 'Alan Amirtharaj'
       environment:
         description: 'Choose the environment'
         required: true
@@ -17,6 +17,7 @@ on:
           - production
           - testing
           - QA
+          -UAT
 
 jobs:
   run_script:
